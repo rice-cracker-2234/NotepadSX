@@ -271,17 +271,17 @@ namespace NotepadSX
         private void executeItem_Click(object sender, EventArgs e)
         {
             if (IsAttached)
-                Lib.Execute(textBox1.Text);
+                Lib.Attach();
             else
-                MessageBox.Show("Please wait for Synapse X to finish loading.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please attach Synapse X.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void attachItem_Click(object sender, EventArgs e)
         {
             if (Lib.Ready())
-                Lib.Attach();
+                Lib.Execute(textBox1.Text);
             else
-                MessageBox.Show("Please attach Synapse X.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please wait for Synapse X to finish loading.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
