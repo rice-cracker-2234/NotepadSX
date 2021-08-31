@@ -87,6 +87,7 @@ namespace NotepadSX
             this.button1.TabIndex = 4;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -122,7 +123,7 @@ namespace NotepadSX
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutNotepadSX";
             this.Text = "About NotepadSX";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

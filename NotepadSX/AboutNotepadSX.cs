@@ -24,5 +24,10 @@ namespace NotepadSX
         {
             Process.Start("https://github.com/khoaScript/NotepadSX");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
