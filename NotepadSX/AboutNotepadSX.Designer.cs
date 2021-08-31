@@ -45,7 +45,7 @@ namespace NotepadSX
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(72, 77);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -53,17 +53,17 @@ namespace NotepadSX
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(123, 12);
+            this.label1.Location = new System.Drawing.Point(90, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Notepad SX";
+            this.label1.Text = "NotepadSX";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 29);
+            this.label2.Location = new System.Drawing.Point(90, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 17);
             this.label2.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace NotepadSX
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(123, 46);
+            this.label3.Location = new System.Drawing.Point(90, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 3;
@@ -93,7 +93,7 @@ namespace NotepadSX
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(123, 107);
+            this.label4.Location = new System.Drawing.Point(90, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 17);
             this.label4.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace NotepadSX
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.linkLabel1.Location = new System.Drawing.Point(123, 124);
+            this.linkLabel1.Location = new System.Drawing.Point(90, 121);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(53, 17);
             this.linkLabel1.TabIndex = 6;
