@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using sxlib;
 using sxlib.Specialized;
+using sxlib.Static;
 
 namespace NotepadSX
 {
@@ -28,8 +29,10 @@ namespace NotepadSX
 
         public NotepadUI()
         {
-            Lib = SxLib.InitializeWinForms(this, "C:\\Exploits\\Synapse X");
+            Lib = SxLib.InitializeWinForms(this, Environment.CurrentDirectory);
             Lib.LoadEvent += Lib_LoadEvent;
+            Lib.AttachEvent += Lib_AttachEvent;
+
             Lib.Load();
 
             InitializeComponent();
@@ -83,10 +86,33 @@ namespace NotepadSX
                 stringBuilder[0] = char.ToUpper(stringBuilder[0]);
 
                 toString += stringBuilder.ToString();
-                if (i > each.Length - 1) toString += " ";
+                if (i < each.Length - 1) toString += " ";
             }
 
             loadLabel.Text = toString;
+        }
+
+        public bool IsAttached;
+        public void Lib_AttachEvent(SxLibBase.SynAttachEvents events, object param)
+        {
+            if (events == SxLibBase.SynAttachEvents.ALREADY_INJECTED ||
+                events == SxLibBase.SynAttachEvents.READY) IsAttached = true;
+            else IsAttached = false;
+
+            var toString = "";
+
+            string str = events.ToString();
+            string[] each = str.Split('_');
+            for (int i = 0; i != each.Length; i++)
+            {
+                var stringBuilder = new StringBuilder(each[i].ToLower());
+                stringBuilder[0] = char.ToUpper(stringBuilder[0]);
+
+                toString += stringBuilder.ToString();
+                if (i < each.Length - 1) toString += " ";
+            }
+
+            attachLabel.Text = toString;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -240,6 +266,22 @@ namespace NotepadSX
         private void aboutNotepadSXItem_Click(object sender, EventArgs e)
         {
             new AboutNotepadSX().ShowDialog();
+        }
+
+        private void executeItem_Click(object sender, EventArgs e)
+        {
+            if (IsAttached)
+                Lib.Execute(textBox1.Text);
+            else
+                MessageBox.Show("Please wait for Synapse X to finish loading.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void attachItem_Click(object sender, EventArgs e)
+        {
+            if (Lib.Ready())
+                Lib.Attach();
+            else
+                MessageBox.Show("Please attach Synapse X.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

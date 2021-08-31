@@ -37,6 +37,7 @@ namespace NotepadSX
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.carriageReturn = new System.Windows.Forms.ToolStripStatusLabel();
+            this.attachLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.loadLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.fileMenu = new System.Windows.Forms.MenuItem();
@@ -67,7 +68,9 @@ namespace NotepadSX
             this.sendFeedbackItem = new System.Windows.Forms.MenuItem();
             this.menuItem15 = new System.Windows.Forms.MenuItem();
             this.aboutNotepadSXItem = new System.Windows.Forms.MenuItem();
-            this.attachLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.synapseXItem = new System.Windows.Forms.MenuItem();
+            this.executeItem = new System.Windows.Forms.MenuItem();
+            this.attachItem = new System.Windows.Forms.MenuItem();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +111,7 @@ namespace NotepadSX
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(431, 17);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // zoomLabel
@@ -133,6 +136,17 @@ namespace NotepadSX
             this.carriageReturn.Text = "Synapse X";
             this.carriageReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // attachLabel
+            // 
+            this.attachLabel.AutoSize = false;
+            this.attachLabel.BackColor = System.Drawing.Color.Transparent;
+            this.attachLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.attachLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.attachLabel.Name = "attachLabel";
+            this.attachLabel.Size = new System.Drawing.Size(200, 17);
+            this.attachLabel.Text = "Not Attached";
+            this.attachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // loadLabel
             // 
             this.loadLabel.AutoSize = false;
@@ -151,7 +165,8 @@ namespace NotepadSX
             this.editMenu,
             this.formatMenu,
             this.viewMenu,
-            this.helpMenu});
+            this.helpMenu,
+            this.synapseXItem});
             // 
             // fileMenu
             // 
@@ -353,16 +368,25 @@ namespace NotepadSX
             this.aboutNotepadSXItem.Text = "About NotepadSX";
             this.aboutNotepadSXItem.Click += new System.EventHandler(this.aboutNotepadSXItem_Click);
             // 
-            // attachLabel
+            // synapseXItem
             // 
-            this.attachLabel.AutoSize = false;
-            this.attachLabel.BackColor = System.Drawing.Color.Transparent;
-            this.attachLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.attachLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.attachLabel.Name = "attachLabel";
-            this.attachLabel.Size = new System.Drawing.Size(200, 17);
-            this.attachLabel.Text = "Not Attached";
-            this.attachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.synapseXItem.Index = 5;
+            this.synapseXItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.executeItem,
+            this.attachItem});
+            this.synapseXItem.Text = "Synapse X";
+            // 
+            // executeItem
+            // 
+            this.executeItem.Index = 0;
+            this.executeItem.Text = "Execute";
+            this.executeItem.Click += new System.EventHandler(this.executeItem_Click);
+            // 
+            // attachItem
+            // 
+            this.attachItem.Index = 1;
+            this.attachItem.Text = "Attach";
+            this.attachItem.Click += new System.EventHandler(this.attachItem_Click);
             // 
             // NotepadUI
             // 
@@ -419,6 +443,9 @@ namespace NotepadSX
         private MenuItem menuItem15;
         private MenuItem aboutNotepadSXItem;
         private ToolStripStatusLabel attachLabel;
+        private MenuItem synapseXItem;
+        private MenuItem executeItem;
+        private MenuItem attachItem;
     }
 }
 
