@@ -32,13 +32,6 @@ namespace NotepadSX
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.RichTextBox();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.zoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.carriageReturn = new System.Windows.Forms.ToolStripStatusLabel();
-            this.attachLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.loadLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.fileMenu = new System.Windows.Forms.MenuItem();
             this.newItem = new System.Windows.Forms.MenuItem();
@@ -71,92 +64,15 @@ namespace NotepadSX
             this.synapseXItem = new System.Windows.Forms.MenuItem();
             this.executeItem = new System.Windows.Forms.MenuItem();
             this.attachItem = new System.Windows.Forms.MenuItem();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.zoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.carriageReturn = new System.Windows.Forms.ToolStripStatusLabel();
+            this.attachLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.loadLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.textBox1.Size = new System.Drawing.Size(1051, 562);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "";
-            this.textBox1.WordWrap = false;
-            this.textBox1.SelectionChanged += new System.EventHandler(this.textBox1_SelectionChanged);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseWheel);
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.zoomLabel,
-            this.carriageReturn,
-            this.attachLabel,
-            this.loadLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 540);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1051, 22);
-            this.statusStrip.TabIndex = 3;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(431, 17);
-            this.toolStripStatusLabel1.Spring = true;
-            // 
-            // zoomLabel
-            // 
-            this.zoomLabel.AutoSize = false;
-            this.zoomLabel.BackColor = System.Drawing.Color.Transparent;
-            this.zoomLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.zoomLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.zoomLabel.Name = "zoomLabel";
-            this.zoomLabel.Size = new System.Drawing.Size(45, 17);
-            this.zoomLabel.Text = "100%";
-            this.zoomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // carriageReturn
-            // 
-            this.carriageReturn.AutoSize = false;
-            this.carriageReturn.BackColor = System.Drawing.Color.Transparent;
-            this.carriageReturn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.carriageReturn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.carriageReturn.Name = "carriageReturn";
-            this.carriageReturn.Size = new System.Drawing.Size(120, 17);
-            this.carriageReturn.Text = "Synapse X";
-            this.carriageReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // attachLabel
-            // 
-            this.attachLabel.AutoSize = false;
-            this.attachLabel.BackColor = System.Drawing.Color.Transparent;
-            this.attachLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.attachLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.attachLabel.Name = "attachLabel";
-            this.attachLabel.Size = new System.Drawing.Size(200, 17);
-            this.attachLabel.Text = "Not Attached";
-            this.attachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // loadLabel
-            // 
-            this.loadLabel.AutoSize = false;
-            this.loadLabel.BackColor = System.Drawing.Color.Transparent;
-            this.loadLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.loadLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.loadLabel.Name = "loadLabel";
-            this.loadLabel.Size = new System.Drawing.Size(240, 17);
-            this.loadLabel.Text = "Not Loaded";
-            this.loadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mainMenu
             // 
@@ -388,17 +304,100 @@ namespace NotepadSX
             this.attachItem.Text = "Attach";
             this.attachItem.Click += new System.EventHandler(this.attachItem_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.textBox1.Size = new System.Drawing.Size(1051, 519);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "";
+            this.textBox1.WordWrap = false;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.zoomLabel,
+            this.carriageReturn,
+            this.attachLabel,
+            this.loadLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 519);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1051, 22);
+            this.statusStrip.TabIndex = 9;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(711, 17);
+            this.toolStripStatusLabel1.Spring = true;
+            // 
+            // zoomLabel
+            // 
+            this.zoomLabel.AutoSize = false;
+            this.zoomLabel.BackColor = System.Drawing.Color.Transparent;
+            this.zoomLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.zoomLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.zoomLabel.Name = "zoomLabel";
+            this.zoomLabel.Size = new System.Drawing.Size(45, 17);
+            this.zoomLabel.Text = "100%";
+            this.zoomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // carriageReturn
+            // 
+            this.carriageReturn.AutoSize = false;
+            this.carriageReturn.BackColor = System.Drawing.Color.Transparent;
+            this.carriageReturn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.carriageReturn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.carriageReturn.Name = "carriageReturn";
+            this.carriageReturn.Size = new System.Drawing.Size(80, 17);
+            this.carriageReturn.Text = "Synapse X";
+            this.carriageReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // attachLabel
+            // 
+            this.attachLabel.AutoSize = false;
+            this.attachLabel.BackColor = System.Drawing.Color.Transparent;
+            this.attachLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.attachLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.attachLabel.Name = "attachLabel";
+            this.attachLabel.Size = new System.Drawing.Size(100, 17);
+            this.attachLabel.Text = "Not Attached";
+            this.attachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // loadLabel
+            // 
+            this.loadLabel.AutoSize = false;
+            this.loadLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loadLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.loadLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.loadLabel.Name = "loadLabel";
+            this.loadLabel.Size = new System.Drawing.Size(100, 17);
+            this.loadLabel.Text = "Not Loaded";
+            this.loadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // NotepadUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1051, 562);
-            this.Controls.Add(this.statusStrip);
+            this.ClientSize = new System.Drawing.Size(1051, 541);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.statusStrip);
             this.Menu = this.mainMenu;
             this.Name = "NotepadUI";
             this.Text = "NotepadUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NotepadUI_FormClosing);
+            this.Load += new System.EventHandler(this.NotepadUI_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -407,12 +406,6 @@ namespace NotepadSX
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox textBox1;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel loadLabel;
-        private System.Windows.Forms.ToolStripStatusLabel zoomLabel;
-        private System.Windows.Forms.ToolStripStatusLabel carriageReturn;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private MainMenu mainMenu;
         private MenuItem fileMenu;
         private MenuItem newItem;
@@ -442,10 +435,16 @@ namespace NotepadSX
         private MenuItem sendFeedbackItem;
         private MenuItem menuItem15;
         private MenuItem aboutNotepadSXItem;
-        private ToolStripStatusLabel attachLabel;
         private MenuItem synapseXItem;
         private MenuItem executeItem;
         private MenuItem attachItem;
+        private RichTextBox textBox1;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel zoomLabel;
+        private ToolStripStatusLabel carriageReturn;
+        private ToolStripStatusLabel attachLabel;
+        private ToolStripStatusLabel loadLabel;
     }
 }
 

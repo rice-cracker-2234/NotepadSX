@@ -29,13 +29,17 @@ namespace NotepadSX
 
         public NotepadUI()
         {
+            InitializeComponent();
+        }
+
+        private void NotepadUI_Load(object sender, EventArgs e)
+        {
             Lib = SxLib.InitializeWinForms(this, Environment.CurrentDirectory);
             Lib.LoadEvent += Lib_LoadEvent;
             Lib.AttachEvent += Lib_AttachEvent;
 
             Lib.Load();
 
-            InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(Path.Combine(Environment.SystemDirectory, "notepad.exe"));
             SetFile("");
         }
@@ -74,8 +78,10 @@ namespace NotepadSX
             pasteItem.Enabled = textBox1.CanPaste(DataFormats.GetFormat(DataFormats.Text));
         }
 
+        public bool Loaded;
         public void Lib_LoadEvent(SxLibBase.SynLoadEvents events, object param)
         {
+            Loaded = events == SxLibBase.SynLoadEvents.READY;
             var toString = "";
 
             string str = events.ToString();
@@ -91,14 +97,9 @@ namespace NotepadSX
 
             loadLabel.Text = toString;
         }
-
-        public bool IsAttached;
+        
         public void Lib_AttachEvent(SxLibBase.SynAttachEvents events, object param)
         {
-            if (events == SxLibBase.SynAttachEvents.ALREADY_INJECTED ||
-                events == SxLibBase.SynAttachEvents.READY) IsAttached = true;
-            else IsAttached = false;
-
             var toString = "";
 
             string str = events.ToString();
@@ -270,18 +271,39 @@ namespace NotepadSX
 
         private void executeItem_Click(object sender, EventArgs e)
         {
-            if (IsAttached)
-                Lib.Attach();
-            else
-                MessageBox.Show("Please attach Synapse X.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            try
+            {
+                Lib.Execute(textBox1.Text);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void attachItem_Click(object sender, EventArgs e)
         {
-            if (Lib.Ready())
-                Lib.Execute(textBox1.Text);
+            try
+            {
+                Lib.Attach();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NotepadUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Loaded) Environment.Exit(0);
             else
-                MessageBox.Show("Please wait for Synapse X to finish loading.", "NotepadSX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                e.Cancel = true;
+                MessageBox.Show("You can close when S^X done loading.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }
