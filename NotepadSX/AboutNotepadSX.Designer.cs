@@ -123,7 +123,9 @@ namespace NotepadSX
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AboutNotepadSX";
             this.Text = "About NotepadSX";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
