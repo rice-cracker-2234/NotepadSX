@@ -11,6 +11,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sxlib;
+using sxlib.Specialized;
 
 namespace NotepadSX
 {
@@ -22,8 +24,14 @@ namespace NotepadSX
         public bool IsNewFile;
         public bool IsUnsaved;
 
+        public SxLibWinForms Lib;
+
         public NotepadUI()
         {
+            Lib = SxLib.InitializeWinForms(this, "C:\\Exploits\\Synapse X");
+            Lib.LoadEvent += Lib_LoadEvent;
+            Lib.Load();
+
             InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(Path.Combine(Environment.SystemDirectory, "notepad.exe"));
             SetFile("");
@@ -61,6 +69,24 @@ namespace NotepadSX
             undoItem.Enabled = textBox1.CanUndo;
             cutItem.Enabled = copyItem.Enabled = delItem.Enabled = !string.IsNullOrEmpty(textBox1.SelectedText);
             pasteItem.Enabled = textBox1.CanPaste(DataFormats.GetFormat(DataFormats.Text));
+        }
+
+        public void Lib_LoadEvent(SxLibBase.SynLoadEvents events, object param)
+        {
+            var toString = "";
+
+            string str = events.ToString();
+            string[] each = str.Split('_');
+            for (int i = 0; i != each.Length; i++)
+            {
+                var stringBuilder = new StringBuilder(each[i].ToLower());
+                stringBuilder[0] = char.ToUpper(stringBuilder[0]);
+
+                toString += stringBuilder.ToString();
+                if (i > each.Length - 1) toString += " ";
+            }
+
+            loadLabel.Text = toString;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

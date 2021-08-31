@@ -37,7 +37,7 @@ namespace NotepadSX
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.carriageReturn = new System.Windows.Forms.ToolStripStatusLabel();
-            this.isInjectedLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.loadLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
             this.fileMenu = new System.Windows.Forms.MenuItem();
             this.newItem = new System.Windows.Forms.MenuItem();
@@ -67,6 +67,7 @@ namespace NotepadSX
             this.sendFeedbackItem = new System.Windows.Forms.MenuItem();
             this.menuItem15 = new System.Windows.Forms.MenuItem();
             this.aboutNotepadSXItem = new System.Windows.Forms.MenuItem();
+            this.attachLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,8 @@ namespace NotepadSX
             this.toolStripStatusLabel1,
             this.zoomLabel,
             this.carriageReturn,
-            this.isInjectedLabel});
+            this.attachLabel,
+            this.loadLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 540);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1051, 22);
@@ -106,7 +108,7 @@ namespace NotepadSX
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(751, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 17);
             this.toolStripStatusLabel1.Spring = true;
             // 
             // zoomLabel
@@ -131,16 +133,16 @@ namespace NotepadSX
             this.carriageReturn.Text = "Synapse X";
             this.carriageReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // isInjectedLabel
+            // loadLabel
             // 
-            this.isInjectedLabel.AutoSize = false;
-            this.isInjectedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.isInjectedLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.isInjectedLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.isInjectedLabel.Name = "isInjectedLabel";
-            this.isInjectedLabel.Size = new System.Drawing.Size(120, 17);
-            this.isInjectedLabel.Text = "Not Attached";
-            this.isInjectedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loadLabel.AutoSize = false;
+            this.loadLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loadLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.loadLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.loadLabel.Name = "loadLabel";
+            this.loadLabel.Size = new System.Drawing.Size(240, 17);
+            this.loadLabel.Text = "Not Loaded";
+            this.loadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mainMenu
             // 
@@ -351,6 +353,17 @@ namespace NotepadSX
             this.aboutNotepadSXItem.Text = "About NotepadSX";
             this.aboutNotepadSXItem.Click += new System.EventHandler(this.aboutNotepadSXItem_Click);
             // 
+            // attachLabel
+            // 
+            this.attachLabel.AutoSize = false;
+            this.attachLabel.BackColor = System.Drawing.Color.Transparent;
+            this.attachLabel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.attachLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.attachLabel.Name = "attachLabel";
+            this.attachLabel.Size = new System.Drawing.Size(200, 17);
+            this.attachLabel.Text = "Not Attached";
+            this.attachLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // NotepadUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,7 +385,7 @@ namespace NotepadSX
         #endregion
         private System.Windows.Forms.RichTextBox textBox1;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel isInjectedLabel;
+        private System.Windows.Forms.ToolStripStatusLabel loadLabel;
         private System.Windows.Forms.ToolStripStatusLabel zoomLabel;
         private System.Windows.Forms.ToolStripStatusLabel carriageReturn;
         private ToolStripStatusLabel toolStripStatusLabel1;
@@ -405,6 +418,7 @@ namespace NotepadSX
         private MenuItem sendFeedbackItem;
         private MenuItem menuItem15;
         private MenuItem aboutNotepadSXItem;
+        private ToolStripStatusLabel attachLabel;
     }
 }
 
