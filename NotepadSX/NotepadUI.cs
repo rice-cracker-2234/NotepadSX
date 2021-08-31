@@ -213,7 +213,7 @@ namespace NotepadSX
 
         private void aboutNotepadSXItem_Click(object sender, EventArgs e)
         {
-
+            new AboutNotepadSX().ShowDialog();
         }
     }
 }
