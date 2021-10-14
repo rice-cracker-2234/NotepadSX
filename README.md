@@ -1,2 +1,2 @@
 # NotepadSX: A Synapse X Custom UI.
-Made by cracker isnt available#0001
+Made by rice cracker#9999
